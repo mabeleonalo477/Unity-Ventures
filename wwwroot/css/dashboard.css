@@ -1,0 +1,187 @@
+﻿
+.dashboard-wrapper {
+    padding: 0 10px 10px;
+}
+
+/* Header */
+
+.top-bar {
+    background: white;
+    border-radius: 20px;
+    padding: 18px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.05);
+    margin-bottom: 24px;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+.business-name {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Balance */
+
+.balance-card {
+    background: linear-gradient(135deg,#0d6efd,#6c5ce7);
+    border-radius: 24px;
+    padding: 32px;
+    color: white;
+    box-shadow: 0 15px 35px rgba(13,110,253,.20);
+    margin-bottom: 36px;
+}
+
+.balance-title {
+    font-size: .9rem;
+    opacity: .85;
+    margin-bottom: 8px;
+}
+
+.balance-amount {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+/* Section */
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #212529;
+}
+
+/* Business Tools */
+
+.tool-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.04);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all .25s ease;
+    border: 1px solid transparent;
+}
+
+
+.tool-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: #eef4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    margin-bottom: 18px;
+}
+
+.tool-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.tool-description {
+    color: #6c757d;
+    font-size: .92rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.tool-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 22px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 14px;
+    background: #0d6efd;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .2s ease;
+}
+
+    .tool-btn:hover {
+        background: #0b5ed7;
+        color: white;
+    }
+
+.tool-btn-secondary {
+    background: #f3f6ff;
+    color: #0d6efd;
+}
+
+    .tool-btn-secondary:hover {
+        background: #e7efff;
+        color: #0d6efd;
+    }
+
+/* Transactions */
+
+.transactions-section {
+    margin-top: 40px;
+}
+
+.transaction-card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.03);
+}
+
+.tx-left {
+    display: flex;
+    align-items: center;
+}
+
+.tx-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: #eef4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 14px;
+    font-size: 1.1rem;
+}
+
+.tx-title {
+    font-weight: 600;
+}
+
+.tx-sub {
+    font-size: .82rem;
+    color: #6c757d;
+}
+
+.tx-amount {
+    font-weight: 700;
+    font-size: .95rem;
+}
+
+.positive {
+    color: #16a34a;
+}
+
+.negative {
+    color: #dc2626;
+}
+
+

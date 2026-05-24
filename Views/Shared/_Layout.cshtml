@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Unity Ventures</title>
+    
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/UnityVentures.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/_layout.css" asp-append-version="true"/>
+   
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-lg uv-navbar sticky-top">
+
+        <div class="container-fluid">
+
+            <!-- Centered Logo -->
+            <a class="navbar-brand uv-logo-wrapper"
+               asp-controller="Home"
+               asp-action="Index">
+
+                <img src="~/images/unity-logo.png"
+                     alt="Unity Ventures"
+                     class="uv-logo" />
+
+            </a>
+
+            @if (User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                <form asp-controller="Account"
+                      asp-action="Logout"
+                      method="post"
+                      class="ms-auto">
+
+                    <button type="submit"
+                            class="uv-account-btn">
+
+                        Logout
+
+                    </button>
+
+                </form>
+            }
+
+        </div>
+
+    </nav>
+    <!-- Page Content -->
+
+    <div class="container">
+
+        <main role="main" class="page-content">
+
+            @RenderBody()
+
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="uv-footer">
+
+        <div class="container">
+
+            © 2026 Unity Ventures
+
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

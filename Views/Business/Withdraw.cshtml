@@ -1,0 +1,102 @@
+﻿@model WithdrawViewModel
+
+@{
+    ViewData["Title"] = "Withdraw Funds";
+}
+
+<link rel="stylesheet" href="~/css/Withdraw.css" asp-append-version="true" />
+
+<div class="container withdraw-wrapper">
+    <div class="w-100">
+
+        <div class="brand-header">
+
+            <div class="brand-badge">
+                Cash Withdrawal
+            </div>
+
+            <h2 class="fw-bold">
+                Withdraw Funds
+            </h2>
+
+            <p class="text-muted small mx-auto" style="max-width:520px;">
+                Request a cash withdrawal from your available business balance.
+            </p>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-6">
+
+                <div class="card withdraw-card">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        @if (!string.IsNullOrWhiteSpace(Model.Message))
+                        {
+                            <div class="alert alert-warning mb-4">
+                                @Model.Message
+                            </div>
+                        }
+
+                        <div class="balance-card">
+
+                            <div class="balance-label">
+                                Available Balance
+                            </div>
+
+                            <div class="balance-amount">
+                                R @Model.AvailableBalance.ToString("N2")
+                            </div>
+
+                        </div>
+
+                        <div class="info-box">
+
+                            <strong>Withdrawal Information</strong>
+
+                            <ul class="mt-2 mb-0">
+                                <li>You may only withdraw up to your available balance.</li>
+                                <li>Withdrawals are processed through participating supermarkets.</li>
+                                <li>Your balance will be updated immediately after approval.</li>
+                            </ul>
+
+                        </div>
+
+                        <form asp-action="Withdraw" method="post">
+
+                            <div class="mb-3">
+
+                                <label asp-for="Amount" class="form-label">
+                                    Withdrawal Amount
+                                </label>
+
+                                <input asp-for="Amount"
+                                       class="form-control"
+                                       placeholder="Enter amount" />
+
+                                <span asp-validation-for="Amount"
+                                      class="text-danger small"></span>
+
+                            </div>
+
+                            <button type="submit"
+                                    class="btn btn-primary btn-withdraw w-100">
+
+                                Request Withdrawal
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

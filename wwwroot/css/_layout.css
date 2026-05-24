@@ -1,0 +1,60 @@
+﻿/* Navbar */
+.uv-navbar {
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    padding: 10px 20px;
+}
+
+.uv-navbar .container-fluid {
+    position: relative;
+    min-height: 80px;
+}
+
+.uv-logo {
+    width: 250px;
+    height: 95px;
+}
+
+.uv-logo-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.uv-account-btn {
+    background: linear-gradient(135deg,#0d6efd,#6c5ce7);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+    .uv-account-btn:hover {
+        opacity: .95;
+    }
+
+/* Main Content */
+
+.page-content {
+    padding-top: 20px;
+    min-height: calc(100vh - 130px);
+}
+
+/* Footer */
+
+.uv-footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #6c757d;
+    font-size: .9rem;
+    border-top: 1px solid #e9ecef;
+    margin-top: 40px;
+    background: transparent;
+}
+
+    .uv-footer a {
+        text-decoration: none;
+    }
+

@@ -1,0 +1,95 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+
+<div class="container hero-section">
+
+    <div class="w-100">
+
+        <!-- Header -->
+        <div class="text-center mb-5">
+
+            <div class="brand-badge">
+                Secure Business Access
+            </div>
+
+            <h1 class="fw-bold display-5 mb-3">
+                Welcome Back
+            </h1>
+
+            <p class="text-muted mx-auto" style="max-width:600px;">
+                Sign in to access your transaction history,
+                and business funding dashboard.
+            </p>
+
+        </div>
+
+        <!-- Login Form -->
+        <div class="row justify-content-center">
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card login-card shadow-sm">
+
+                    <div class="card-body p-4 p-md-5 text-center">
+
+                        <div class="icon-circle">
+                            🔐
+                        </div>
+
+                        <h5 class="fw-bold mb-4">
+                            Business Login
+                        </h5>
+
+                        <form asp-action="Login" method="post">
+
+                            <!-- Email -->
+                            <div class="mb-3 text-start">
+                                <label class="form-label small text-muted">Email Address</label>
+                                <input asp-for="EmailAddress" class="form-control" />
+                                <span asp-validation-for="EmailAddress" class="text-danger small"></span>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="mb-3 text-start">
+                                <label class="form-label small text-muted">Password</label>
+                                <input asp-for="Password" type="password" class="form-control" />
+                                <span asp-validation-for="Password" class="text-danger small"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-login w-100">
+                                Sign In
+                            </button>
+
+                            <div class="mt-3">
+                                <a href="#" class="small-link text-muted">
+                                    Forgot password?
+                                </a>
+                            </div>
+
+                            <div class="mt-4">
+                                <p class="small text-muted mb-0">
+                                    Don’t have an account?
+                                    <a asp-controller="Account" asp-action="Register">
+                                        Register here
+                                    </a>
+                                </p>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

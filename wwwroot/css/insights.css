@@ -1,0 +1,104 @@
+﻿body {
+    background: #f8f9fc;
+}
+
+.insights-wrapper {
+    padding: 0 10px 20px;
+}
+
+.top-bar {
+    background: white;
+    border-radius: 20px;
+    padding: 18px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.05);
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.business-name {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.kpi-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.04);
+}
+
+.kpi-label {
+    font-size: .85rem;
+    color: #6c757d;
+    margin-bottom: 6px;
+}
+
+.kpi-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+.status-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.04);
+    margin-bottom: 16px;
+}
+
+.status-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.badge-status {
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: .8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.good {
+    background: #e8f7ee;
+    color: #16a34a;
+}
+
+.bad {
+    background: #fde8e8;
+    color: #dc2626;
+}
+
+.eligibility {
+    padding: 18px;
+    border-radius: 16px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+.eligible {
+    background: linear-gradient(135deg,#16a34a,#22c55e);
+    color: white;
+}
+
+.not-eligible {
+    background: linear-gradient(135deg,#dc2626,#ef4444);
+    color: white;
+}
+

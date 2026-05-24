@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Unity Ventures";
+}
+
+<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+
+<div class="container hero-section">
+
+    <div class="w-100">
+
+        <div class="text-center mb-5">
+
+            <div class="brand-badge">
+                Bridging South Africa's Informal & Formal Economy
+            </div>
+
+            <h1 class="fw-bold mb-3">
+                Turn Everyday Cash Deposits Into Business Opportunities
+            </h1>
+
+            <p class="text-muted mx-auto"
+               style="max-width:650px;">
+                Make secure cash deposits through your local supermarket without expensive bank charges. 
+                Build your financial history, unlock access to business funding, 
+                and grow with confidence.
+            </p>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-4 col-md-5 mb-3">
+
+                <div class="card action-card shadow-sm">
+
+                    <div class="card-body text-center p-4">
+
+                        <div class="icon-circle register-icon">
+                            🏪
+                        </div>
+
+                        <h5 class="fw-bold">
+                            Register Business
+                        </h5>
+
+                        <p class="text-muted small mb-4">
+                            Start accepting payments and
+                            building your financial profile.
+                        </p>
+
+                        <a asp-controller="Account"
+                           asp-action="Register"
+                           class="btn btn-success w-100 rounded-pill">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-5 mb-3">
+
+                <div class="card action-card shadow-sm">
+
+                    <div class="card-body text-center p-4">
+
+                        <div class="icon-circle login-icon">
+                            🔐
+                        </div>
+
+                        <h5 class="fw-bold">
+                            Business Login
+                        </h5>
+
+                        <p class="text-muted small mb-4">
+                            Access payments, transactions,
+                            and funding opportunities.
+                        </p>
+
+                        <a asp-controller="Account"
+                           asp-action="Login"
+                           class="btn btn-primary w-100 rounded-pill">
+                            Sign In
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+
+            <span class="feature-pill">📱 Credit Score</span>
+            <span class="feature-pill">📈 Financial History</span>
+            <span class="feature-pill">💰 Access Funding</span>
+
+        </div>
+
+    </div>
+
+</div>

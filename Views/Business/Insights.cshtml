@@ -1,0 +1,70 @@
+﻿@model BusinessInsightsViewModel
+@{
+    ViewData["Title"] = "Business Insights";
+}
+
+<link rel="stylesheet" href="~/css/insights.css" asp-append-version="true" />
+
+<div class="container insights-wrapper">
+
+    <!-- HEADER -->
+    <div class="top-bar">
+        <div class="brand">Unity Ventures</div>
+        <div class="business-name">👤 @Model.BusinessName</div>
+    </div>
+
+    <!-- CASH KPI -->
+    <div class="kpi-grid">
+
+        <div class="kpi-card">
+            <div class="kpi-label">Number of Deposits</div>
+            <div class="kpi-value">@Model.Deposits</div>
+        </div>
+
+        <div class="kpi-card">
+            <div class="kpi-label">Total Cash Spent</div>
+            <div class="kpi-value">R @Model.TotalCashSpentRand.ToString("N2")</div>
+        </div>
+
+    </div>
+
+    <!-- CURRENT LOAN -->
+    <div class="status-card">
+        <div class="status-title">Current Loan</div>
+
+        <span class="badge-status @(Model.CurrentLoanStatus == "Paid Off" ? "good" : "bad")">
+            @Model.CurrentLoanStatus
+        </span>
+
+        <div style="margin-top:10px;">
+            Amount: <strong>R @Model.CurrentLoanAmountRand.ToString("N2")</strong>
+        </div>
+    </div>
+
+    <!-- PREVIOUS LOAN -->
+    <div class="status-card">
+        <div class="status-title">Previous Loan</div>
+
+        <span class="badge-status @(Model.PreviousLoanStatus == "Paid Off" ? "good" : "bad")">
+            @Model.PreviousLoanStatus
+        </span>
+
+        <div style="margin-top:10px;">
+            Amount: <strong>R @Model.PreviousLoanAmountRand.ToString("N2")</strong>
+        </div>
+    </div>
+
+    <!-- ELIGIBILITY -->
+    <div class="eligibility @(Model.EligibleForNewLoan ? "eligible" : "not-eligible")">
+
+        @if (Model.EligibleForNewLoan)
+        {
+            <text>✓ Eligible for New Loan</text>
+        }
+        else
+        {
+            <text>✗ Not Eligible for New Loan</text>
+        }
+
+    </div>
+</div>

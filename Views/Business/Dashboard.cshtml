@@ -1,0 +1,163 @@
+﻿@model DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
+
+<div class="container dashboard-wrapper">
+    <!-- Header -->
+
+    <div class="top-bar d-flex justify-content-between align-items-center">
+
+        <div class="brand">
+            Unity Ventures
+        </div>
+
+        <div class="business-name">
+            👤 @Model.BusinessName
+        </div>
+
+    </div>
+
+    <!-- Balance -->
+
+    <div class="balance-card">
+
+        <div class="balance-title">
+            Available Balance
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+            <div class="balance-amount">
+                R @Model.Balance
+            </div>
+
+            <a asp-controller="Business"
+               asp-action="Withdraw"
+               class="btn btn-light fw-semibold px-4 py-2">
+
+                Withdraw Cash
+
+            </a>
+
+        </div>
+
+        <small>
+            Last updated: just now
+        </small>
+
+    </div>
+
+    <!-- Business Tools -->
+
+    <div class="section-title">
+        Business Tools
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-6">
+
+            <div class="tool-card">
+
+                <div>
+
+                    <div class="tool-icon">
+                        💰
+                    </div>
+
+                    <div class="tool-title">
+                        Request Loan
+                    </div>
+
+                    <p class="tool-description">
+                        Apply for funding using your transaction history and business performance.
+                    </p>
+
+                </div>
+
+                <a asp-controller="Business" asp-action="RequestLoan" class="tool-btn">
+                    Apply Now →
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="tool-card">
+
+                <div>
+
+                    <div class="tool-icon">
+                        📊
+                    </div>
+
+                    <div class="tool-title">
+                        Business Insights
+                    </div>
+
+                    <p class="tool-description">
+                        View revenue trends, customer activity and growth opportunities.
+                    </p>
+
+                </div>
+
+                <a asp-controller="Business" asp-action="Insights" class="tool-btn tool-btn-secondary">
+                    View Insights →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Transactions -->
+
+    <div class="transactions-section">
+
+        <div class="section-title">
+            Recent Transactions
+        </div>
+
+        @foreach (var transaction in Model.Transactions)
+        {
+            <div class="transaction-card">
+
+                <div class="tx-left">
+                    <div class="tx-icon">💵</div>
+
+                    <div>
+                        <div class="tx-title">
+                            @transaction.Type
+                        </div>
+
+                        <div class="tx-sub">
+                            @transaction.CreatedAt.ToString("dd MMM yyyy")
+                        </div>
+                    </div>
+                </div>
+
+                @if (transaction.Type == "Deposit" || transaction.Type == "Loan CashIn")
+                {
+                    <div class="tx-amount positive">
+                        + R @transaction.Amount
+                    </div>
+                }
+                else
+                {
+                    <div class="tx-amount negative">
+                        - R @transaction.Amount
+                    </div>
+                }
+
+            </div>
+        }
+
+    </div>
+</div>
